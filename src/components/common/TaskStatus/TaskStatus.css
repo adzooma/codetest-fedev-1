@@ -1,0 +1,83 @@
+.taskstatus__pre {
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+    color: #777777;
+    user-select: none;
+
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.taskstatus__taskname {
+    display: inline-block;
+    width: 100%;
+    user-select: none;
+}
+.taskstatus__tasknametext {
+    padding: 0;
+    font-size: 2.4em;
+    user-select: none;
+
+    float: left;
+}
+[class*="taskstatus__checkbox"].material-icons {
+    font-size: 3em;
+
+    margin: 3px 16px 0 -5px;
+    float: left;
+}
+.taskstatus__checkboxon.material-icons {
+    display: none;
+    color: #35854e;
+}
+
+.taskstatus__taskdesc {
+    width: 100%;
+    display: inline-block;
+    margin: 10px 0 20px 0;
+    user-select: none;
+}
+
+.taskstatus__buttonforward.button {
+    background-color: #a00500;
+    display: none;
+}
+.taskstatus__buttondisabled[disabled] {
+    cursor: not-allowed;
+}
+.taskstatus > a,
+.taskstatus > button {
+    margin-right: 12px;
+}
+
+
+.taskstatus.is-completed .taskstatus__tasknametext {
+    color: #35854e;
+}
+
+.taskstatus.is-completed .taskstatus__checkboxoff.material-icons,
+.taskstatus.is-completed .taskstatus__buttondisabled {
+    display: none;
+}
+.taskstatus.is-completed .taskstatus__checkboxon.material-icons,
+.taskstatus.is-completed .taskstatus__buttonforward {
+    display: inline-block;
+}
+
+@media (max-width: 800px) {
+    .taskstatus {
+        text-align: center;
+    }
+    .taskstatus__taskname {
+        width: auto;
+    }
+}
+@media (max-width: 500px) {
+    [class*="taskstatus__checkbox"],
+    .taskstatus__tasknametext {
+        float: none;
+        width: 100%;
+    }
+}

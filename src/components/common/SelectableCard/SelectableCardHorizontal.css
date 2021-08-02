@@ -1,0 +1,31 @@
+.selectablecard.selectablecard-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 8px 14px 8px 10px;
+}
+
+.selectablecard-horizontal > .selectablecard__image {
+    max-width: 32px;
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+
+.selectablecard-horizontal > .selectablecard__title {
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.selectablecard-horizontal > .selectablecard__description {
+    text-align: right;
+    font-size: 0.8em;
+
+    width: 100px;
+}
+
+.selectablecard-horizontal > .selectablecard__title,
+.selectablecard-horizontal > .selectablecard__description {
+    padding: 0;
+}

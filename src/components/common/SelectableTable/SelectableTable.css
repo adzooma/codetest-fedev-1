@@ -1,0 +1,76 @@
+.selectabletable {
+    user-select: none;
+}
+
+.selectabletable__cols {
+    display: flex;
+    justify-content: space-between;
+}
+.selectabletable__cols > span {
+    font-size: 0.8em;
+    color: #666666;
+    text-transform: uppercase;
+}
+
+.selectabletable__rows {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+
+    background: #ffffff;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.1);
+}
+.selectabletable__rows > li > span {
+    display: inline-block;
+}
+
+.selectabletable__rows > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+
+    cursor: pointer;
+}
+
+.selectabletable__cols > span,
+.selectabletable__rows > li > span {
+    padding: 0 14px;
+}
+
+.selectabletable__rows > li.is-highlighted {
+    font-weight: bold;;
+}
+.selectabletable__rows > li.is-selected,
+.selectabletable__rows > li.is-selected:hover {
+    color: #ffffff;
+    background: linear-gradient(to bottom, #239de9, #0D85D1);
+    cursor: default;
+}
+.selectabletable__rows > li:hover {
+    color: #0D85D1;
+}
+
+
+// Scrollbar
+.selectabletable-withscroll > .selectabletable__rows {
+    overflow-y: scroll;
+    max-height: 600px;
+}
+.selectabletable-withscroll > .selectabletable__rows::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+.selectabletable-withscroll > .selectabletable__rows::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+.selectabletable-withscroll > .selectabletable__rows::-webkit-scrollbar-thumb {
+    background-color: #999;
+}

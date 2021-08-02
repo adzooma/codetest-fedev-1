@@ -1,0 +1,30 @@
+.l-pageheader {
+    padding: 60px 30px;
+    background: #fbf8e7;
+}
+
+.l-pageheader > .l-container {
+    display: flex;
+    align-items: center;
+}
+
+.l-pageheader .taskstatus {
+    width: 40%;
+    margin-right: 2%;
+}
+.l-pageheader .progressbar {
+    width: 58%;
+}
+
+@media (max-width: 800px) {
+    .l-pageheader > .l-container {
+        flex-direction: column;
+    }
+    .l-pageheader .taskstatus,
+    .l-pageheader .progressbar {
+        width: 100%;
+    }
+    .l-pageheader .progressbar {
+        margin-top: 60px;
+    }
+}
