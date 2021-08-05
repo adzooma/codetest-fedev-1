@@ -12,7 +12,7 @@ const SlideShow = ({
 	console.log(slideData);
 	console.log(activeSlide);
 
-	const handleActiveSlide = activeSlide => {
+	const handleActiveSlide = () => {
 		// TODO: Set the new active slide index to the next array element
 		const lastActiveSlide = slideData.length - 1;
 		setActiveSlide(prev => (prev === lastActiveSlide ? 0 : prev + 1));
@@ -20,21 +20,22 @@ const SlideShow = ({
 
 	return (
 		<section className="slideshow">
-			<article className="image-column">
+			<article className="slideshow__image-column">
 				<img
 					src={slideData[activeSlide].image}
 					alt={slideData[activeSlide].image}
 				/>
 			</article>
-			<article className="slideshow-column info">
-				<h3 className="title">{slideData[activeSlide].title}</h3>
-				<button
-					className="change-formation"
-					onClick={() => handleActiveSlide(activeSlide)}
-				>
+			<article className="slideshow__info-column">
+				<h2 className="title">{slideData[activeSlide].title}</h2>
+				<button className="change-formation" onClick={handleActiveSlide}>
 					Change Formation
 				</button>
-				<div className="slide-options">options</div>
+				<div className="slideshow-options">
+					{slideData.map(({ id }) => (
+						<div key={id} className="box" />
+					))}
+				</div>
 			</article>
 		</section>
 	);
