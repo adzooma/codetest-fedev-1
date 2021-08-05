@@ -22,7 +22,7 @@ const FormationSelector = () => {
 		<>
 			<SlideShow
 				slideData={slideData}
-				activeSlide={initialActiveSlide}
+				initialActiveSlide={initialActiveSlide}
 				setUserFormation={setUserFormation}
 			/>
 		</>
