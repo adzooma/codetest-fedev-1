@@ -13,6 +13,7 @@ const FormationSelector = () => {
 	const initialActiveSlide = slideData
 		.map(({ id }) => id)
 		.indexOf(userFormation.id); // Array index number for slide to show initially (reflects user's formation selection from useContext/localStorage)
+	console.log(userFormation.title);
 
 	return (
 		// ---

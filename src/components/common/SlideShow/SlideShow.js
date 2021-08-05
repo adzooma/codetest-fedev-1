@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SlideShow.css";
 
 const SlideShow = ({
@@ -9,14 +9,15 @@ const SlideShow = ({
 	// DO NOT PUSH CODE UNTIL ASSIGNMENT IS COMPLETED
 	const [activeSlide, setActiveSlide] = useState(initialActiveSlide);
 
-	console.log(slideData);
-	console.log(activeSlide);
-
 	const handleActiveSlide = () => {
-		// TODO: Set the new active slide index to the next array element
 		const lastActiveSlide = slideData.length - 1;
 		setActiveSlide(prev => (prev === lastActiveSlide ? 0 : prev + 1));
+		console.log(activeSlide);
 	};
+
+	useEffect(() => {
+		setUserFormation(slideData[activeSlide]);
+	}, [activeSlide, slideData, setUserFormation]);
 
 	return (
 		<section className="slideshow">
