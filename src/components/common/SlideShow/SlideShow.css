@@ -1,7 +1,30 @@
-/* ---
-Implement your SlideShow styles below
---- */
-
+/* Slideshow */
 .slideshow {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
 
+@media only screen and (max-width: 800px) {
+	.slideshow {
+		flex-direction: column;
+	}
+}
+
+/* Slideshow columns */
+.slideshow-column.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.slideshow-column.info > h3 {
+	padding-bottom: 0;
+}
+
+.slideshow-options {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }

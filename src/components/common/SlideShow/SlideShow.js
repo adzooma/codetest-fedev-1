@@ -7,12 +7,16 @@ const SlideShow = ({ slideData, activeSlide, setUserFormation }) => {
 	console.log(activeSlide);
 
 	return (
-		<div className="slideshow">
-			<img src={slideData[activeSlide].image} />
-			<h3 className="title">{slideData[activeSlide].title}</h3>
-			<button className="change-formation">Change Formation</button>
-			<div className="slide-options">options</div>
-		</div>
+		<section className="slideshow">
+			<article className="image-column">
+				<img src={slideData[activeSlide].image} />
+			</article>
+			<article className="slideshow-column info">
+				<h3 className="title">{slideData[activeSlide].title}</h3>
+				<button className="change-formation">Change Formation</button>
+				<div className="slide-options">options</div>
+			</article>
+		</section>
 	);
 };
 
