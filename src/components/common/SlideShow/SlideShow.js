@@ -1,35 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./SlideShow.css";
 
-const SlideShow = ({
-	slideData,
-	initialActiveSlide,
-	setUserFormation,
-}) => {
-	// DO NOT PUSH CODE UNTIL ASSIGNMENT IS COMPLETED
-	const [activeSlide, setActiveSlide] = useState(initialActiveSlide);
-
-	const handleActiveSlide = () => {
-		const lastActiveSlide = slideData.length - 1;
-		setActiveSlide(prev => (prev === lastActiveSlide ? 0 : prev + 1));
+const SlideShow = ({ slideData, activeSlide, setUserFormation }) => {
+	// Transition to the next active slide
+	const handleFormationChange = () => {
+		const lastSlide = slideData.length - 1;
+		const nextSlide = activeSlide === lastSlide ? 0 : activeSlide + 1;
+		setUserFormation(slideData[nextSlide]);
 	};
-
-	useEffect(() => {
-		setUserFormation(slideData[activeSlide]);
-	}, [activeSlide, slideData, setUserFormation]);
 
 	return (
 		<section className="slideshow">
-			<article className="slideshow__image-column">
+			<figure className="slideshow__image-column">
 				<img
 					className="formation-image"
 					src={slideData[activeSlide].image}
 					alt={slideData[activeSlide].image}
 				/>
-			</article>
+			</figure>
 			<article className="slideshow__info-column">
 				<h2 className="title">{slideData[activeSlide].title}</h2>
-				<button className="change-formation" onClick={handleActiveSlide}>
+				<button
+					className="change-formation"
+					onClick={handleFormationChange}
+				>
 					Change Formation
 				</button>
 				<div className="slideshow-dots">
