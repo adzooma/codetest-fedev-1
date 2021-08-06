@@ -2,6 +2,14 @@ import React from "react";
 import "./SlideShow.css";
 
 const SlideShow = ({ slideData, activeSlide, setUserFormation }) => {
+	// Initialize the current active slide index
+	// const [activeSlide, setActiveSlide] = useState(initialActiveSlide);
+
+	// Set the user formation only after the active slide has been updated
+	// useEffect(() => {
+	// 	setUserFormation(slideData[activeSlide]);
+	// }, [activeSlide, slideData, setUserFormation]);
+
 	// Transition to the next active slide
 	const handleFormationChange = () => {
 		const lastSlide = slideData.length - 1;
